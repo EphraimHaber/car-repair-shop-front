@@ -1,0 +1,21 @@
+<h1>Worker scoreboard</h1>
+<div class="container">
+    <table class="table">
+        <th scope="col">worker id</th>
+        <th scope="col">name</th>
+        <th scope="col">phone number</th>
+        <th scope="col">city</th>
+        <th scope="col">street</th>
+        <th scope="col">street number</th>
+        <th scope="col">bonus points</th>
+        <tr *ngFor="let worker of workers">
+            <td>{{worker.id}}</td>
+            <td>{{worker.name}}</td>
+            <td>{{worker.phone_number}}</td>
+            <td>{{worker.city}}</td>
+            <td>{{worker.street}}</td>
+            <td>{{worker.street_number}}</td>
+            <td>{{worker.bonus_points}}</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,39 @@
+<h1>Car tests</h1>
+<h1>NOTE UI BUG, ABOUT (TOP NAV) IS THE DESIRED BEHAVIOR, TODO IMPLEMENT</h1>
+<div class="container">
+    <table class="table table-striped table-bordered table-hover">
+        <tr>
+            <th scope="col">test id</th>
+            <th scope="col">car id</th>
+            <th scope="col">bonus points</th>
+            <th scope="col">urgency</th>
+            <th scope="col">is fixed</th>
+            <th scope="col">assigned_worker id</th>
+            <th scope="col">change/set worker</th>
+            <th scope="col">set fixed</th>
+        </tr>
+        <tr *ngFor="let test of tests" class="justify-content-between">
+            <td>{{test.id}}</td>
+            <td>{{test.car_to_test}}</td>
+            <td>{{test.bonus_points_on_fix}}</td>
+            <td>{{test.urgency}}</td>
+            <td>{{test.is_fixed}}</td>
+            <td>{{test.assigned_worker}}</td>
+            <td>
+                <mat-form-field appearance="fill">
+                    <mat-label>NONE</mat-label>
+                    <mat-select [(value)]="selected">
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let worker of workers" value={{worker.id}}>
+                            ID: {{worker.id}} ({{worker.name}})
+                        </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                <button (click)="assignWorker(test)" class="btn btn-info full-button">Change/set</button>
+            </td>
+            <td *ngIf="!test.is_fixed">
+                <button (click)="setFixed(test)" class="btn btn-success full-button">Set as done</button>
+            </td>
+        </tr>
+    </table>
+</div>

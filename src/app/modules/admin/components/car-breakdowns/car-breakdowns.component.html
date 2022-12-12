@@ -1,0 +1,34 @@
+<h1>Car breakdowns - Worker zone</h1>
+<div class="container">
+    <form class="flex d-flex ">
+        <div *ngFor="let breakdown of breakdowns" class="justify-content-between" class="card shadow mt-2">
+            <div class="card-body breakdowns">
+                <h3 class="card-title">BREAKDOWN</h3>
+                <p class="card-text"><strong>Breakdown ID:</strong> 
+                    {{breakdown.id}}
+                </p>
+                <p class="card-text"><strong>Car to repair: </strong>
+                    {{breakdown.car_to_repair}}
+                </p>
+                <p class="card-text"><strong>Breakdown descriptopn: </strong>
+                    {{breakdown.description}}
+                </p>
+                <p class="card-text"><strong>Assigned worker: </strong>
+                    {{breakdown.assigned_worker}}
+                </p>
+                <p class="card-text"><strong>Bonus points on fix: </strong>
+                    {{breakdown.bonus_points_on_fix}}
+                </p>
+                <p class="card-text"><strong>Urgency: </strong>
+                    {{breakdown.urgency}}
+                </p>
+                <p class="card-text"><strong>Is fixed: </strong>
+                    {{breakdown.is_fixed}}
+                </p>
+                <!-- <a class="btn btn-primary control-buttons">Edit some data(todo)</a> -->
+                <button (click)="markAsFixed(breakdown)" class="btn btn btn-success control-buttons">Mark as fixed</button>
+            </div>
+        </div>
+    </form>
+    
+</div>

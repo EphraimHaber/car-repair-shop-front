@@ -1,0 +1,16 @@
+.navbar-container {
+    display: flex;
+    position: sticky;
+    justify-items: left;
+    justify-content: end;
+    width: 100%;
+    
+}
+
+.my-logo {
+    display: flex;
+    /* flex-direction: row; */
+    /* justify-content: center; */
+    display: block;
+    margin-left: 5px;
+}

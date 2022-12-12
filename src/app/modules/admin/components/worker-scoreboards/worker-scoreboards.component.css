@@ -1,0 +1,16 @@
+* {
+    padding: 5px;
+}
+tr {
+    border: 0.3px solid blue;
+    text-align: center
+}
+
+td {
+    border: 0.3px solid blue;
+    text-align: center
+}
+th {
+    border: 0.3px solid blue;
+    text-align: center
+}
