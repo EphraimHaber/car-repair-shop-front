@@ -1,1 +1,47 @@
 <p>add-breakdown works!</p>
+
+  <div class="container card shadow mt-2">
+    <div class="card-body ">
+        <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+            <span for="name">Description:</span>
+            <div>
+              <input class="form-group" id="name" type="text" formControlName="description" > 
+            </div>
+            <span>Bonus points on fix</span>
+            <div> 
+              <input type="number" formControlName="bonus_points_on_fix" min="0">
+            </div>
+            <span>Urgency</span>
+            <div> 
+              <input type="number" formControlName="urgency" min="0">
+            </div>
+            <span>Assigned worker</span>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>NONE</mat-label>
+                    <mat-select [(value)]="selectedWorker">
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let worker of workers" value={{worker.id}}>
+                            ID: {{worker.id}} ({{worker.name}})
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <span>Car to repair</span>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>NONE</mat-label>
+                    <mat-select [(value)]="selectedCar">
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let car of cars" value={{car.id}}>
+                            ID: {{car.id}} ({{car.license_plate}})
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <button class="btn btn-primary" type="submit">Add breakdown</button>
+
+        </form>
+
+    </div>
+</div>
