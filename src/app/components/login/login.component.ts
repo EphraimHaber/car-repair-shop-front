@@ -37,8 +37,9 @@ export class LoginComponent implements OnInit {
   submit(): void {
     let obj = this.loginForm.getRawValue();
     this.auth.login(obj).subscribe(data => {
-      console.log(data)
-      this.auth.setToken(data.jwt)
+      console.log(data);
+      this.auth.setAccessToken(data.refresh);
+      this.auth.setRefreshToken(data.access);
       this.router.navigate(['/admin'])
     });
   }

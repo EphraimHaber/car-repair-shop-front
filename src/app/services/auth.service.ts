@@ -13,8 +13,19 @@ export class AuthService {
     localStorage.setItem('token', token);
   }
 
+  setAccessToken(token: string):void{
+    localStorage.setItem('access', token)
+  }
+
+  setRefreshToken(token: string): void {
+    localStorage.setItem('refresh', token)
+  }
+
   getToken(): string | null {
-    return localStorage.getItem('token');
+    return localStorage.getItem('access');
+  }
+  getRefreshToken(): string | null {
+    return localStorage.getItem('refresh');
   }
 
   isLoggedIn() {
@@ -22,14 +33,18 @@ export class AuthService {
   }
 
   logout() {
-    localStorage.removeItem('token');
+    localStorage.removeItem('access');
     this.router.navigate(['login']);
   }
+
+  // refreshAccessToken() {
+  //   this.http.post
+  // }
 
 
   login({ email, password }: any): Observable<any> {
     const dict = {"email": email, "password": password}
-    return this.http.post('http://localhost:8000/api/loginC/', dict)
+    return this.http.post('http://localhost:8000/api/token/', dict)
   }
 
 
