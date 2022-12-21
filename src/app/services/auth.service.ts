@@ -44,6 +44,8 @@ export class AuthService {
 
   login({ email, password }: any): Observable<any> {
     const dict = {"email": email, "password": password}
+    localStorage.setItem('email', email);
+    localStorage.setItem('password', password);
     return this.http.post('http://localhost:8000/api/token/', dict)
   }
 

@@ -38,8 +38,8 @@ export class LoginComponent implements OnInit {
     let obj = this.loginForm.getRawValue();
     this.auth.login(obj).subscribe(data => {
       console.log(data);
-      this.auth.setAccessToken(data.refresh);
-      this.auth.setRefreshToken(data.access);
+      this.auth.setAccessToken(data.access);
+      this.auth.setRefreshToken(data.refresh);
       this.router.navigate(['/admin'])
     });
   }

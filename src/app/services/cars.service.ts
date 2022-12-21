@@ -13,17 +13,6 @@ export class CarsService {
   constructor(private http: HttpClient, private auth: AuthService) { }
   
   getCars(): Observable<any> {
-    // console.log();
-    // var headers_object = new HttpHeaders({
-    //   'Content-Type': 'application/json',
-    //   'Authorization': `Bearer ${this.auth.getToken()}`,
-    //   'refresh': `${this.auth.getRefreshToken()}`,
-    //   'access': `${this.auth.getRefreshToken()}`
-    // });
-    // console.log(headers_object.get('Authorization'))
-    // const httpOptions = {
-    //   headers: headers_object
-    // };
     return this.http.post('http://localhost:8000/api/getAllCars/', {withCredentials: true});
 
   }
