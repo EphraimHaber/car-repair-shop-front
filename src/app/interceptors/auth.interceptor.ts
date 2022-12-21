@@ -20,8 +20,6 @@ export class AuthInterceptor implements HttpInterceptor {
       },
       withCredentials: true
     })
-    debugger;
-    window.alert(localStorage.getItem('access'))
     return next.handle(request);
   }
 }
